@@ -7,12 +7,20 @@ using System.Threading.Tasks;
 
 namespace Selenium.Utils.Html
 {
-    public abstract class Element
+    public abstract class BaseElement
     {
         protected readonly IWebDriver _driver;
         protected readonly By _selector;
 
-        public Element(IWebDriver driver, By selector)
+        public IWebElement Element
+        {
+            get
+            {
+                return _driver.FindElement(_selector);
+            }
+        }
+
+        public BaseElement(IWebDriver driver, By selector)
         {
             this._driver = driver;
             this._selector = selector;
