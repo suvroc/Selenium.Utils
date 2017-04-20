@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,11 @@ namespace Selenium.Utils.Selectors
         public CssSelector(string selector)
         {
             this.selector = selector;
+        }
+
+        public By ToSelector()
+        {
+            return By.CssSelector(this.Selector);
         }
 
         public CssSelector All()
