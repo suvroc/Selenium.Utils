@@ -3,6 +3,6 @@ Selenium utility library to improve test creation
 
 ## Contents
 
-[Selectors builder](Selectors.md "Selector")
+[Selectors builder](Selectors "Selector")
 
-[HTML elements](HTML.md "HTML elements")
+[HTML elements](HTML "HTML elements")
