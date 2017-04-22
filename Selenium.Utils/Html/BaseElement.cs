@@ -11,11 +11,16 @@ namespace Selenium.Utils.Html
     {
         protected readonly IWebDriver _driver;
         protected readonly By _selector;
+        protected readonly IWebElement _element;
 
         public IWebElement Element
         {
             get
             {
+                if (_element != null)
+                {
+                    return _element;
+                }
                 return _driver.FindElement(_selector);
             }
         }
@@ -24,6 +29,13 @@ namespace Selenium.Utils.Html
         {
             this._driver = driver;
             this._selector = selector;
+        }
+
+        public BaseElement(IWebDriver driver, IWebElement element)
+        {
+            this._driver = driver;
+            this._selector = null;
+            this._element = element;
         }
     }
 }
