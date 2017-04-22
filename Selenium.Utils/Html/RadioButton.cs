@@ -19,7 +19,7 @@ namespace Selenium.Utils.Html
         {
             get
             {
-                return ((IJavaScriptExecutor)_driver).ExecuteScript("return arguments[0].nextSibling.nodeValue", this.Element).ToString();  
+                return ((IJavaScriptExecutor)_driver).ExecuteScript("var node = arguments[0].nextSibling; while(node.textContent && node.textContent.trim() === '') node = node.nextSibling; return node.textContent", this.Element).ToString();  
             }
         }
     }

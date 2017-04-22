@@ -51,5 +51,25 @@ namespace Selenium.Utils.Tests.Html
 
             Assert.AreEqual("female", radio.SelectedOption.Element.GetAttribute("value"));
         }
+
+        [Test]
+        public void should_select_by_text_male()
+        {
+            var radio = new RadioButtons(_driver, By.Name("gender"));
+
+            radio.SelectByText("Male");
+
+            Assert.AreEqual("male", radio.SelectedOption.Element.GetAttribute("value"));
+        }
+
+        [Test]
+        public void should_select_by_text_other()
+        {
+            var radio = new RadioButtons(_driver, By.Name("gender"));
+
+            radio.SelectByText("Other");
+
+            Assert.AreEqual("other", radio.SelectedOption.Element.GetAttribute("value"));
+        }
     }
 }

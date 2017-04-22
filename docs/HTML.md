@@ -35,3 +35,15 @@ Library contains a set of wrapper class to provide better experience with common
 	radio.SelectByIndex(1)
 	radio.SelectByText("Female")
 	radio.SelectByValue("female")
+
+## Checkbox
+
+	<input type="checkbox" name="carCheckbox" value="male" checked> Car<br>
+
+	var checkbox = new Checkbox(driver, By.Name("checkbox"));
+
+	checkbox.Text
+	checkbox.Checked
+	checkbox.Check()
+	checkbox.Uncheck()
+	checkbox.Switch()
