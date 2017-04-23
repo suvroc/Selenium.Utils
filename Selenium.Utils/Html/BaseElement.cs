@@ -34,7 +34,6 @@ namespace Selenium.Utils.Html
         public BaseElement(IWebDriver driver, IWebElement element)
         {
             this._driver = driver;
-            this._selector = null;
             this._element = element;
         }
     }

@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Html\BaseSeleniumTest.cs" />
     <Compile Include="Html\CheckboxTest.cs" />
+    <Compile Include="Html\NavigableTest.cs" />
     <Compile Include="Html\RadioTest.cs" />
     <Compile Include="Html\TableTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,7 +74,13 @@
     <Content Include="TestFiles\checkbox.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="TestFiles\navigate2.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestFiles\radioButton.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\navigate1.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="TestFiles\table.html">

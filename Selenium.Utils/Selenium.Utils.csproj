@@ -50,6 +50,7 @@
     <Compile Include="Html\BaseElement.cs" />
     <Compile Include="Html\HtmlExtensions.cs" />
     <Compile Include="Html\Checkbox.cs" />
+    <Compile Include="Html\Navigable.cs" />
     <Compile Include="Html\RadioButton.cs" />
     <Compile Include="Html\RadioButtons.cs" />
     <Compile Include="Html\Table.cs" />
