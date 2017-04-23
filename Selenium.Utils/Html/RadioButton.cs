@@ -19,6 +19,12 @@ namespace Selenium.Utils.Html
         {
             get
             {
+                var name = Element.GetAttribute("name");
+                IWebElement label;
+                if (this.IsElementPresent(By.CssSelector($"label[for='{name}']"), out label))
+                {
+                    return label.Text;
+                }
                 return ((IJavaScriptExecutor)_driver).ExecuteScript("var node = arguments[0].nextSibling; while(node.textContent && node.textContent.trim() === '') node = node.nextSibling; return node.textContent", this.Element).ToString();  
             }
         }

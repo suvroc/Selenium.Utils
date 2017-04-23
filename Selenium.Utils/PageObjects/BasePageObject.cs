@@ -25,6 +25,7 @@ namespace Selenium.Utils.PageObjects
         }
 
         public static TPageObject CreatePageObject<TPageObject>(IWebDriver driver)
+            where TPageObject : BasePageObject
         {
             var type = typeof(TPageObject);
             IList<Type> constructorSignature = new List<Type> { typeof(IWebDriver) };
@@ -39,6 +40,12 @@ namespace Selenium.Utils.PageObjects
             }
 
             return (TPageObject)constructor.Invoke(constructorArgs.ToArray());
+        }
+
+        public TPageObject NavigateTo<TPageObject>()
+            where TPageObject : BasePageObject
+        {
+            return CreatePageObject<TPageObject>(_driver);
         }
     }
 }
