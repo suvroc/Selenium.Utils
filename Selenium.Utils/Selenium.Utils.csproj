@@ -51,6 +51,7 @@
     <Compile Include="Html\HtmlExtensions.cs" />
     <Compile Include="Html\Checkbox.cs" />
     <Compile Include="Html\Navigable.cs" />
+    <Compile Include="Html\List.cs" />
     <Compile Include="Html\Select.cs" />
     <Compile Include="Html\RadioButton.cs" />
     <Compile Include="Html\RadioButtons.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="PageObjects\BasePageObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Selectors\CssSelector.cs" />
+    <Compile Include="TestCase\BaseTestCase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
