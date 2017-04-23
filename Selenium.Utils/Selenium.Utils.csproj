@@ -52,6 +52,7 @@
     <Compile Include="Html\Checkbox.cs" />
     <Compile Include="Html\Navigable.cs" />
     <Compile Include="Html\List.cs" />
+    <Compile Include="Html\Image.cs" />
     <Compile Include="Html\Select.cs" />
     <Compile Include="Html\RadioButton.cs" />
     <Compile Include="Html\RadioButtons.cs" />
