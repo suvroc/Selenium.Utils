@@ -27,5 +27,11 @@ namespace Selenium.Utils.Extensions
             Actions action = new Actions(driver);
             action.MoveToElement(element).DoubleClick().Build().Perform();
         }
+
+        public static void Hover(this IWebDriver driver, IWebElement element)
+        {
+            Actions action = new Actions(driver);
+            action.MoveToElement(element).Build().Perform();
+        }
     }
 }
