@@ -33,5 +33,9 @@ namespace Selenium.Utils.Extensions
             Actions action = new Actions(driver);
             action.MoveToElement(element).Build().Perform();
         }
+
+        //public static object Retry(this IWebDriver driver, int retryNumber)
+        //{
+        //}
     }
 }

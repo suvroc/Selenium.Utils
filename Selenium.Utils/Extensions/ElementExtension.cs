@@ -30,5 +30,15 @@ namespace Selenium.Utils.Extensions
             }
             return null;
         }
+
+        public static T GetJsProperty<T>(this IWebElement element, IWebDriver driver, string jsCode)
+        {
+            var jsExecutor = driver as IJavaScriptExecutor;
+            if (jsExecutor != null)
+            {
+                return (T)jsExecutor.ExecuteScript(string.Concat("return arguments[0].", jsCode), element);
+            }
+            return default(T);
+        }
     }
 }

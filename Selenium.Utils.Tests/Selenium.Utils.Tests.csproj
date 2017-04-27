@@ -53,6 +53,7 @@
     <Compile Include="Extensions\HoverTest.cs" />
     <Compile Include="Extensions\DoubleClickTest.cs" />
     <Compile Include="Html\BaseSeleniumTest.cs" />
+    <Compile Include="Html\JsPropertyTest.cs" />
     <Compile Include="Html\CheckboxTest.cs" />
     <Compile Include="Html\NavigableTest.cs" />
     <Compile Include="Html\RadioTest.cs" />
@@ -76,6 +77,9 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="TestFiles\jsProperty.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestFiles\hover.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
