@@ -50,6 +50,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\RetryTest.cs" />
     <Compile Include="Extensions\HoverTest.cs" />
     <Compile Include="Extensions\DoubleClickTest.cs" />
     <Compile Include="Html\BaseSeleniumTest.cs" />

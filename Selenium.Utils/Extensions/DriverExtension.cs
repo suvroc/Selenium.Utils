@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
+using System.Threading;
 
 namespace Selenium.Utils.Extensions
 {
@@ -34,8 +35,47 @@ namespace Selenium.Utils.Extensions
             action.MoveToElement(element).Build().Perform();
         }
 
-        //public static object Retry(this IWebDriver driver, int retryNumber)
-        //{
-        //}
+        public static void Retry(this IWebDriver driver, Action operation, int retryCount, TimeSpan delay)
+        {
+            int i = 0;
+            while (retryCount > i)
+            { 
+                try
+                {
+                    operation();
+                }
+                catch (Exception)
+                {
+                    if(retryCount <= i)
+                    {
+                        throw;
+                    }
+                }
+                Thread.Sleep(delay.Milliseconds);
+                i++;
+            }
+        }
+
+        public static T Retry<T>(this IWebDriver driver, Func<T> operation, int retryCount, TimeSpan delay)
+        {
+            int i = 0;
+            while (true)
+            {
+                try
+                {
+                    return operation();
+                }
+                catch (Exception)
+                {
+                    if (retryCount <= i)
+                    {
+                        throw;
+                    }
+                }
+                Thread.Sleep(delay.Milliseconds);
+                i++;
+            }
+            return default(T);
+        }
     }
 }
