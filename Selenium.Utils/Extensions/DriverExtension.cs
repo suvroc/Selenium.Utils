@@ -75,7 +75,11 @@ namespace Selenium.Utils.Extensions
                 Thread.Sleep(delay.Milliseconds);
                 i++;
             }
-            return default(T);
+        }
+
+        public static void DragAndDrop(this IWebDriver driver, IWebElement from, IWebElement to)
+        {
+            (new Actions(driver)).DragAndDrop(from, to).Perform();
         }
     }
 }
