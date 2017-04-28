@@ -53,6 +53,7 @@
     <Compile Include="Extensions\RetryTest.cs" />
     <Compile Include="Extensions\HoverTest.cs" />
     <Compile Include="Extensions\DoubleClickTest.cs" />
+    <Compile Include="Helpers\HelperTest.cs" />
     <Compile Include="Html\BaseSeleniumTest.cs" />
     <Compile Include="Html\JsPropertyTest.cs" />
     <Compile Include="Html\CheckboxTest.cs" />
