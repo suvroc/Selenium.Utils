@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Extensions\ElementExtension.cs" />
     <Compile Include="Extensions\DriverExtension.cs" />
+    <Compile Include="Helpers\GeneralHelper.cs" />
     <Compile Include="Html\BaseElements.cs" />
     <Compile Include="Html\BaseElement.cs" />
     <Compile Include="Html\HtmlExtensions.cs" />
