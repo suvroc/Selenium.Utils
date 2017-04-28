@@ -16,7 +16,7 @@ namespace Selenium.Utils.Tests.Html
         [Test]
         public void should_get_table_data()
         {
-            var table = _driver.FindTable(By.Id("tableId"));
+            var table = _driver.Html().Table(By.Id("tableId"));
 
             Assert.AreEqual("2.1", table.GetData(2, 1).Text);
         }
@@ -24,7 +24,7 @@ namespace Selenium.Utils.Tests.Html
         [Test]
         public void should_get_table_columns()
         {
-            var table = _driver.FindTable(By.Id("tableId"));
+            var table = _driver.Html().Table(By.Id("tableId"));
 
             Assert.That(table.Columns, Is.EquivalentTo(new string[] { "Col 1", "Col 2", "Col 3" }));
         }

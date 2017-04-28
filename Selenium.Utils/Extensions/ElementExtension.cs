@@ -40,5 +40,20 @@ namespace Selenium.Utils.Extensions
             }
             return default(T);
         }
+
+        public static string GetValue(this IWebElement element, IWebDriver driver)
+        {
+            var val =  element.GetAttribute("value");
+            if (!string.IsNullOrEmpty(val))
+            {
+                return val;
+            }
+            var jsExecutor = driver as IJavaScriptExecutor;
+            if (jsExecutor != null)
+            {
+                return (string)jsExecutor.ExecuteScript("return arguments[0].nodeValue", element);
+            }
+            return "";
+        }
     }
 }

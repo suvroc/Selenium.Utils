@@ -50,6 +50,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\ValueTest.cs" />
     <Compile Include="Extensions\RetryTest.cs" />
     <Compile Include="Extensions\HoverTest.cs" />
     <Compile Include="Extensions\DoubleClickTest.cs" />
@@ -78,6 +79,9 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="TestFiles\value.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestFiles\jsProperty.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

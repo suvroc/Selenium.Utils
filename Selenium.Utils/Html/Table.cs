@@ -14,6 +14,11 @@ namespace Selenium.Utils.Html
 
         }
 
+        public Table(IWebDriver driver, IWebElement element) : base(driver, element)
+        {
+
+        }
+
         public IWebElement Header
         {
             get {
