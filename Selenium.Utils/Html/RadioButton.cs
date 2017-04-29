@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace Selenium.Utils.Html
 {
@@ -20,8 +17,7 @@ namespace Selenium.Utils.Html
             get
             {
                 var name = Element.GetAttribute("name");
-                IWebElement label;
-                if (this.IsElementPresent(By.CssSelector($"label[for='{name}']"), out label))
+                if (this.IsElementPresent(By.CssSelector($"label[for='{name}']"), out IWebElement label))
                 {
                     return label.Text;
                 }

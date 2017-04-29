@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using NUnit.Framework.Interfaces;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Html5;
 using Selenium.Utils.Extensions;
 using Selenium.Utils.TestCase;
 

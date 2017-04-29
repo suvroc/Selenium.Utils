@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using System.Threading;
+using OpenQA.Selenium.Support.UI;
 
 namespace Selenium.Utils.Extensions
 {
@@ -14,12 +10,11 @@ namespace Selenium.Utils.Extensions
     {
         public static void TakeScreenshot(this IWebDriver driver, string testName)
         {
-            var screenshotProvider = driver as ITakesScreenshot;
-            if (screenshotProvider != null)
+            if (driver is ITakesScreenshot screenshotProvider)
             {
                 Screenshot ss = screenshotProvider.GetScreenshot();
                 ss.SaveAsFile($"{testName}_{DateTime.Now:yyyy-MM-dd-hh-mm-ss}.acceptance-exception.png",
-                    ScreenshotImageFormat.Png); //use any of the built in image formating
+                    ScreenshotImageFormat.Png);
             }
         }
 
@@ -80,6 +75,65 @@ namespace Selenium.Utils.Extensions
         public static void DragAndDrop(this IWebDriver driver, IWebElement from, IWebElement to)
         {
             (new Actions(driver)).DragAndDrop(from, to).Perform();
+        }
+
+        public static IWebElement FindElement(this IWebDriver driver, By by, int timeoutInSeconds)
+        {
+            if (timeoutInSeconds > 0)
+            {
+                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
+                return wait.Until(drv => drv.FindElement(by));
+            }
+            return driver.FindElement(by);
+        }
+
+        public static TResult WaitUntil<TResult>(this IWebDriver driver, Func<IWebDriver, TResult> function, int timeoutInSeconds)
+        {
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
+            return wait.Until(function);
+        }
+
+        public static bool IsElementPresent(this IWebDriver driver, By by, out IWebElement element)
+        {
+            try
+            {
+                element = driver.FindElement(by);
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                element = null;
+                return false;
+            }
+        }
+
+        public static bool IsElementPresent(this IWebDriver driver, By by)
+        {
+            return driver.IsElementPresent(by, out IWebElement element);
+        }
+
+        public static void WaitForPageToLoad(this IWebDriver driver)
+        {
+            TimeSpan timeout = new TimeSpan(0, 0, 30);
+            WebDriverWait wait = new WebDriverWait(driver, timeout);
+
+            IJavaScriptExecutor javascript = driver as IJavaScriptExecutor;
+            if (javascript == null)
+                throw new ArgumentException("driver", "Driver must support javascript execution");
+
+            wait.Until((d) =>
+            {
+                try
+                {
+                    string readyState = javascript.ExecuteScript(
+                    "if (document.readyState) return document.readyState;").ToString();
+                    return readyState.ToLower() == "complete";
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            });
         }
     }
 }

@@ -2,18 +2,23 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Selenium.Utils.PageObjects
 {
     public abstract class BasePageObject
     {
         protected readonly IWebDriver _driver;
+        protected readonly IWebElement _element;
 
         public BasePageObject(IWebDriver driver)
         {
             this._driver = driver;
+        }
+
+        public BasePageObject(IWebDriver driver, IWebElement element)
+        {
+            this._driver = driver;
+            this._element = element;
         }
 
         public string Url

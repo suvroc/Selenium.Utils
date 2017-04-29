@@ -1,9 +1,4 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Selenium.Utils.Html
 {
@@ -53,8 +48,7 @@ namespace Selenium.Utils.Html
 
         protected bool IsElementPresent(By by)
         {
-            IWebElement element;
-            return this.IsElementPresent(by, out element);
+            return this.IsElementPresent(by, out IWebElement element);
         }
     }
 }

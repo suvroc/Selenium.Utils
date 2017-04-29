@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
 
 namespace Selenium.Utils.Extensions
 {
@@ -19,12 +13,10 @@ namespace Selenium.Utils.Extensions
             }
             element.SendKeys(filepath);
         }
-        // execute js
 
         public static object GetJsProperty(this IWebElement element, IWebDriver driver, string jsCode)
         {
-            var jsExecutor = driver as IJavaScriptExecutor;
-            if (jsExecutor != null)
+            if (driver is IJavaScriptExecutor jsExecutor)
             {
                 return jsExecutor.ExecuteScript(string.Concat("return arguments[0].", jsCode), element);
             }
@@ -33,8 +25,7 @@ namespace Selenium.Utils.Extensions
 
         public static T GetJsProperty<T>(this IWebElement element, IWebDriver driver, string jsCode)
         {
-            var jsExecutor = driver as IJavaScriptExecutor;
-            if (jsExecutor != null)
+            if (driver is IJavaScriptExecutor jsExecutor)
             {
                 return (T)jsExecutor.ExecuteScript(string.Concat("return arguments[0].", jsCode), element);
             }
@@ -48,12 +39,18 @@ namespace Selenium.Utils.Extensions
             {
                 return val;
             }
-            var jsExecutor = driver as IJavaScriptExecutor;
-            if (jsExecutor != null)
+            if (driver is IJavaScriptExecutor jsExecutor)
             {
                 return (string)jsExecutor.ExecuteScript("return arguments[0].nodeValue", element);
             }
             return "";
+        }
+
+        public static void SendKeys(this IWebElement element, string value, bool clearFirst)
+        {
+            if (clearFirst)
+                element.Clear();
+            element.SendKeys(value);
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using Selenium.Utils.Html;
-using System.Threading;
 
 namespace Selenium.Utils.Tests.Html
 {

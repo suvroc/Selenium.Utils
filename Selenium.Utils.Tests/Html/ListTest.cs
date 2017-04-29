@@ -2,7 +2,6 @@
 using OpenQA.Selenium;
 using Selenium.Utils.Html;
 using System.Linq;
-using System.Threading;
 
 namespace Selenium.Utils.Tests.Html
 {

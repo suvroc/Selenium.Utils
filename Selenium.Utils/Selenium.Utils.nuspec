@@ -2,14 +2,14 @@
 <package >
   <metadata>
     <id>Selenium.Utils</id>
-    <version>0.1.1</version>
+    <version>1.0.0</version>
     <authors>suvroc</authors>
     <owners>suvroc</owners>
     <licenseUrl>https://github.com/suvroc/Selenium.Utils/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/suvroc/Selenium.Utils</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Utilities pack to Selenium.WebDriver</description>
-    <releaseNotes>Element extensions</releaseNotes>
+    <releaseNotes>First final version</releaseNotes>
     <copyright>Copyright 2017</copyright>
     <tags>selenium utils e2e</tags>
   </metadata>

@@ -1,8 +1,5 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using Selenium.Utils.Html;
-using System.Threading;
-using System.Linq;
 using Selenium.Utils.Extensions;
 
 namespace Selenium.Utils.Tests.Html

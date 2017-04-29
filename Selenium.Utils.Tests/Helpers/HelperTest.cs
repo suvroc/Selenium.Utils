@@ -1,8 +1,5 @@
-﻿using System;
-using NUnit.Framework;
-using Selenium.Utils.Extensions;
+﻿using NUnit.Framework;
 using Selenium.Utils.Helpers;
-using Selenium.Utils.Tests.Html;
 
 namespace Selenium.Utils.Tests.Helpers
 {

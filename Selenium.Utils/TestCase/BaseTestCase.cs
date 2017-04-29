@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Html5;
@@ -37,8 +33,7 @@ namespace Selenium.Utils.TestCase
 
             _driver.Manage().Cookies.DeleteAllCookies();
 
-            var webStorage = _driver as IHasWebStorage;
-            if (webStorage != null)
+            if (_driver is IHasWebStorage webStorage)
             {
                 webStorage.WebStorage.LocalStorage.Clear();
                 webStorage.WebStorage.SessionStorage.Clear();

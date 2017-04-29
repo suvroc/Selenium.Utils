@@ -1,9 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using Selenium.Utils.Extensions;
-using Selenium.Utils.Html;
 using Selenium.Utils.Tests.Html;
-using System;
 
 namespace Selenium.Utils.Tests.Extensions
 {
